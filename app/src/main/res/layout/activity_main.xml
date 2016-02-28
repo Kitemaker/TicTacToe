@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/layout_topbanner"
-        android:background="@android:color/transparent"
+        android:background="#ffb8ffe9"
         android:paddingTop="10dp">
 
         <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
-            android:background="@android:color/background_light">
+            android:background="@android:color/transparent">
 
         </LinearLayout>
 
@@ -32,22 +32,27 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:outlineProvider="background">
 
             <Button
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:text="@string/text_start"
                 android:id="@+id/buttonStart"
-                android:onClick="ClearAll" />
+                android:onClick="ClearAll"
+                android:background="#fffef9ff"
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textViewResult"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:background="#fffef9ff" />
         </LinearLayout>
     </LinearLayout>
 
