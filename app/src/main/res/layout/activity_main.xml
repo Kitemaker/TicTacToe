@@ -5,30 +5,50 @@
     android:background="@android:color/white"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:id="@+id/layout_root">
+    android:id="@+id/layout_root"
+    android:showDividers="middle|beginning|end">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/topbanner"
+        android:id="@+id/layout_topbanner"
         android:background="@android:color/transparent"
         android:paddingTop="10dp">
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="wrap_content"
-            android:text="@string/text_start"
-            android:id="@+id/buttonStart"
-            android:onClick="ClearAll"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.75"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textViewResult" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/background_light">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_start"
+                android:id="@+id/buttonStart"
+                android:onClick="ClearAll" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewResult"
+                android:textStyle="normal" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -36,156 +56,187 @@
         android:layout_height="360dp"
         android:background="#fffffcfe"
         android:orientation="vertical"
-        android:id="@+id/linearLayout"
-       >
+        android:id="@+id/layout_tiles"
+        android:focusable="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.33"
-            android:background="#ffdbffba"
-            android:orientation="horizontal">
+            android:layout_width="360dp"
+            android:layout_height="120dp"
+            android:background="@android:color/holo_blue_dark"
+            android:orientation="horizontal"
+            android:outlineProvider="background">
 
             <TextView
                 android:id="@+id/textView_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:background="#ffd4ffd3"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:text="@string/text_empty"
-                android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold"
-                android:capitalize="characters"
-                android:textIsSelectable="false" />
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.33" />
 
             <TextView
                 android:id="@+id/textView_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:background="@android:color/white"
-                android:clickable="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:onClick="OnTileClicked"
-                android:text="@string/text_empty"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:background="#ffd4ffd3"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:outlineProvider="bounds"
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.333" />
+
+            <TextView
+                android:id="@+id/textView_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="#ffeffffc"
+                android:clickable="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="OnTileClicked"
+                android:text="@string/text_empty"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.33" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.33"
+            android:layout_height="120dp"
             android:orientation="horizontal"
-            android:divider="#ff0a07ff">
+            android:divider="#ff0a07ff"
+            android:background="@android:color/holo_blue_dark">
+
+            <TextView
+                android:id="@+id/textView_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:clickable="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="OnTileClicked"
+                android:text="@string/text_empty"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#ffeffffc" />
 
             <TextView
                 android:id="@+id/textView_4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"
-                android:background="@android:color/white"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp" />
 
             <TextView
                 android:id="@+id/textView_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"
-                android:background="#ffd4ffd3"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:background="@android:color/white"
-                android:clickable="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:onClick="OnTileClicked"
-                android:text="@string/text_empty"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp" />
 
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.33"
-            android:orientation="horizontal">
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:background="@android:color/holo_blue_dark">
+
+            <TextView
+                android:id="@+id/textView_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:background="#ffeffffc"
+                android:clickable="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="OnTileClicked"
+                android:text="@string/text_empty"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView_7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"
-                android:background="#ffd4ffd3"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView_8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"
-                android:background="@android:color/white"
+                android:background="#ffeffffc"
                 android:clickable="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:onClick="OnTileClicked"
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_9"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:background="#ffd4ffd3"
-                android:clickable="true"
-                android:gravity="center_vertical|center_horizontal"
-                android:onClick="OnTileClicked"
-                android:text="@string/text_empty"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp" />
 
 
         </LinearLayout>

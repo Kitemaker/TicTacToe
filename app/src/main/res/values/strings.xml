@@ -9,4 +9,5 @@
     <string name="text_topBanner">TopBanner</string>
     <string name="text_XWin_Msg">Player \'X\' Wins</string>
     <string name="text_0Win_Msg">Player \'0\' Wins</string>
+    <string name="text_GameOver">Game Over! Start Again</string>
 </resources>
