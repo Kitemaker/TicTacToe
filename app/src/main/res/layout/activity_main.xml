@@ -5,8 +5,7 @@
     android:background="@android:color/white"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:id="@+id/layout_root"
-    android:showDividers="middle|beginning|end">
+    android:id="@+id/layout_root">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,7 +21,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:background="@android:color/transparent">
 
         </LinearLayout>
@@ -51,13 +50,15 @@
                 android:layout_height="fill_parent"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:id="@+id/textViewResult"
-                android:textStyle="normal"
-                android:background="#ffc5c4ff"
+                android:background="@android:color/transparent"
                 android:autoText="true"
                 android:textColor="@android:color/black"
                 android:paddingLeft="6dp"
                 android:layout_gravity="center_vertical"
-                android:paddingTop="6dp" />
+                android:paddingTop="6dp"
+                android:gravity="center_vertical"
+                android:textAlignment="gravity"
+                android:singleLine="true" />
         </LinearLayout>
     </LinearLayout>
 
@@ -67,7 +68,8 @@
         android:background="#fffffcfe"
         android:orientation="vertical"
         android:id="@+id/layout_tiles"
-        android:focusable="true">
+        android:focusable="true"
+        android:layout_gravity="center_horizontal">
 
         <LinearLayout
             android:layout_width="360dp"
@@ -104,7 +106,7 @@
                 android:text="@string/text_empty"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="2dp"
