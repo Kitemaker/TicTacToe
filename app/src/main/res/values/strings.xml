@@ -10,4 +10,8 @@
     <string name="text_XWin_Msg">Player \'X\' Wins</string>
     <string name="text_0Win_Msg">Player \'0\' Wins</string>
     <string name="text_GameOver">Game Over! Start Again</string>
+    <string name="text_PlrX">Player X :</string>
+    <string name="text_PlrO">Player O :</string>
+    <string name="text_score">Score</string>
+    <string name="text_StartWith">Start with:</string>
 </resources>

@@ -13,16 +13,115 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/layout_topbanner"
-        android:background="#ffeffffc"
-        android:paddingTop="10dp">
+        android:background="#ffeffffc">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.75"
             android:layout_gravity="center"
-            android:background="@android:color/transparent">
+            android:background="@android:color/transparent"
+            android:id="@+id/layout_score">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/text_score"
+                    android:id="@+id/textView_Score"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/text_PlrX"
+                    android:id="@+id/textViewPlrX"
+                    android:layout_weight="0.3"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="99"
+                    android:id="@+id/textView2"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/text_PlrO"
+                    android:id="@+id/textViewPlrO"
+                    android:layout_weight="0.3"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="99"
+                    android:id="@+id/textView3"
+                    android:layout_weight="0.2"
+                    android:gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/text_StartWith"
+                    android:id="@+id/textView_StartLabel"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.3" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.7"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="&apos;X&apos;"
+                        android:id="@+id/radioButtonX"
+                        android:layout_weight="0.5"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="&apos;O&apos;"
+                        android:id="@+id/radioButtonO"
+                        android:layout_weight="0.5"
+                        android:checked="false" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"></LinearLayout>
 
         </LinearLayout>
 
@@ -30,10 +129,10 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.25"
             android:gravity="center_vertical"
-            android:padding="5dp"
-            android:outlineProvider="background">
+            android:outlineProvider="background"
+            android:paddingLeft="12dp">
 
             <Button
                 android:layout_width="100dp"
@@ -42,7 +141,8 @@
                 android:id="@+id/buttonStart"
                 android:onClick="ClearAll"
                 android:background="#ffc5c4ff"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -58,8 +158,10 @@
                 android:paddingTop="6dp"
                 android:gravity="center_vertical"
                 android:textAlignment="gravity"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:layout_marginBottom="5dp" />
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
