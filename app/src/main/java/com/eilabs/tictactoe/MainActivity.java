@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -17,11 +18,15 @@ public class  MainActivity extends ActionBarActivity {
     private String textGrid[]= {"1","1","1","1","1","1","1","1","1"};
     private  boolean gameOver=false;
     private String WinCombo="0-0-0";
+    private boolean startWithX=true;
+    private int scoreX=0;
+    private int scoreO=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        // ClearAll(findViewById(R.id.textView_1));
+      //  UpdateScore();
         }
 
     @Override
@@ -59,14 +64,24 @@ public class  MainActivity extends ActionBarActivity {
                     case 5:
                     case 7:
                     case 9:
-                        WriteX(tview);
+                        if(startWithX) {
+                            WriteX(tview);
+                        }
+                        else {
+                            WriteZero(tview);
+                        }
                         break;
 
                     case 2:
                     case 4:
                     case 6:
                     case 8:
-                        WriteZero(tview);
+                        if(startWithX) {
+                            WriteZero(tview);
+                        }
+                        else {
+                            WriteX(tview);
+                        }
                         break;
 
                     default:
@@ -75,10 +90,19 @@ public class  MainActivity extends ActionBarActivity {
 
                 }
                 if (clickCounter == 5 || clickCounter == 7 || clickCounter == 9) {
-                    checkForGame(getString(R.string.text_cross));
+                    if (startWithX == true) {
+                        checkForGame(getString(R.string.text_cross));
+                    } else {
+                        checkForGame(getString(R.string.text_zero));
+                    }
+                } else if (clickCounter == 6 || clickCounter == 8)
 
-                } else if (clickCounter == 6 || clickCounter == 8 ) {
-                    checkForGame(getString(R.string.text_zero));
+                {
+                    if (startWithX == true) {
+                        checkForGame(getString(R.string.text_zero));
+                    } else {
+                        checkForGame(getString(R.string.text_cross));
+                    }
                 }
             }
         }
@@ -121,6 +145,18 @@ public class  MainActivity extends ActionBarActivity {
             if (gameOver == true) {
                 resultView.setText("Player \' " + tbvalue + "\' Wins");
                 colorTextBox(WinCombo);
+                if(tbvalue.equals(R.string.text_cross))
+                {
+                    scoreX=scoreX+1;
+                }
+                if(tbvalue.equals(R.string.text_zero))
+                {
+                    scoreO=scoreO+1;
+                }
+
+                UpdateScore();
+
+
             }
             if(clickCounter>=9 && gameOver==false)
             {
@@ -132,6 +168,13 @@ public class  MainActivity extends ActionBarActivity {
             Log.d(TAG,e.getMessage().toString());
         }
 
+    }
+
+    private void UpdateScore() {
+        TextView textViewScX=(TextView)findViewById(R.id.textViewScoreX);
+        TextView textViewScrO=(TextView)findViewById(R.id.textViewScoreO);
+        textViewScX.setText(Integer.toString(scoreX));
+        textViewScrO.setText(Integer.toString(scoreO));
     }
 
     public void WriteX(TextView view)
@@ -207,6 +250,22 @@ public class  MainActivity extends ActionBarActivity {
                 break;
             case "2-4-6":
 
+        }
+    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioButtonX:
+                if (checked)
+                    startWithX=true;
+                    break;
+            case R.id.radioButtonO:
+                if (checked)
+                    startWithX=false;
+                    break;
         }
     }
 
