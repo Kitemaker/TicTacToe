@@ -145,11 +145,11 @@ public class  MainActivity extends ActionBarActivity {
             if (gameOver == true) {
                 resultView.setText("Player \' " + tbvalue + "\' Wins");
                 colorTextBox(WinCombo);
-                if(tbvalue.equals(R.string.text_cross))
+                if(tbvalue==getString(R.string.text_cross))
                 {
                     scoreX=scoreX+1;
                 }
-                if(tbvalue.equals(R.string.text_zero))
+                if(tbvalue==getString(R.string.text_zero))
                 {
                     scoreO=scoreO+1;
                 }

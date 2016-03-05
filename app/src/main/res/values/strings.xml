@@ -10,8 +10,12 @@
     <string name="text_XWin_Msg">Player \'X\' Wins</string>
     <string name="text_0Win_Msg">Player \'0\' Wins</string>
     <string name="text_GameOver">Game Over! Start Again</string>
-    <string name="text_PlrX">Player X :</string>
-    <string name="text_PlrO">Player O :</string>
+    <string name="text_PlrX">Player \'X\' :</string>
+    <string name="text_PlrO">Player \'0\' :</string>
     <string name="text_score">Score</string>
     <string name="text_StartWith">Start with:</string>
+    <string name="title_activity_launcher">Launcher</string>
+    <string name="text_SelectGame">Please Select Game Mode</string>
+    <string name="text_btnSingleDevice">Single Device</string>
+    <string name="text_DoubleDevice">Two Device</string>
 </resources>
