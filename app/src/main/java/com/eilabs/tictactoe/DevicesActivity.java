@@ -1,35 +1,25 @@
 package com.eilabs.tictactoe;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-
-import com.eilabs.tictactoe.R;
-
-import java.nio.channels.Channel;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import static android.widget.Toast.*;
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class DevicesActivity extends AppCompatActivity {
-   // private BluetoothAdapter adapter =BluetoothAdapter.getDefaultAdapter();
-    IntentFilter filter =new IntentFilter();
-    List<String> deviceList= new ArrayList<String>();
+    // private BluetoothAdapter adapter =BluetoothAdapter.getDefaultAdapter();
+    IntentFilter filter = new IntentFilter();
+    List<String> deviceList = new ArrayList<String>();
     ArrayAdapter<String> deviceListAdapter;
     String deviceClicked;
     IntentFilter mIntentFilter;
@@ -53,8 +43,7 @@ public class DevicesActivity extends AppCompatActivity {
         mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
         mIntentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
 
-        deviceListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, deviceList);
-       final ListView listView = (ListView) findViewById(android.R.id.list);
+        final ListView listView = (ListView) findViewById(android.R.id.list);
 
 
         mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
@@ -76,19 +65,16 @@ public class DevicesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 deviceClicked = (String) listView.getItemAtPosition(position);
-                //Toast.makeText(getBaseContext(), elementClicked.getElement(), Toast.LENGTH_SHORT).show();
-                makeText(getBaseContext(), deviceClicked, LENGTH_SHORT);
             }
         });
 
-            }
+    }
 
-            @Override
-            public void onDestroy() {
-                unregisterReceiver(mReceiver);
-                super.onDestroy();
-
-            }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mReceiver);
+    }
 
 
     /* register the broadcast receiver with the intent values to be matched */
@@ -97,6 +83,7 @@ public class DevicesActivity extends AppCompatActivity {
         super.onResume();
         registerReceiver(mReceiver, mIntentFilter);
     }
+
     /* unregister the broadcast receiver */
     @Override
     protected void onPause() {
@@ -104,4 +91,4 @@ public class DevicesActivity extends AppCompatActivity {
         unregisterReceiver(mReceiver);
     }
 
-        }
+}

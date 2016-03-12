@@ -21,7 +21,6 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
     }
 
-
     public void SelectGameMode(View view)
     {
      Button btn =(Button)view;
@@ -34,13 +33,10 @@ public class StartActivity extends AppCompatActivity {
         }
         else if(btn.getText()==getString(R.string.text_DoubleDevice))
         {
-
             Intent intent =new Intent(this,DevicesActivity.class);
             //  String message = getString(R.string.action_physics);
             intent.putExtra(EXTRA_MESSAGE, "");
             startActivity(intent);
-
-
         }
 
     }
