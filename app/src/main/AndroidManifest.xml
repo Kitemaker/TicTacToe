@@ -30,6 +30,7 @@
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,6 +42,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eilabs.tictactoe.StartActivity" />
         </activity>
+        <activity
+            android:name=".Chat"
+            android:label="@string/title_activity_chat"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -20,4 +20,9 @@
     <string name="text_DoubleDevice">Two Device</string>
     <string name="title_activity_connected_device">ConnectedDevice</string>
     <string name="title_activity_devices">DevicesActivity</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="connect">Connect</string>
+    <string name="discover">Discover</string>
+    <string name="register">Register</string>
+    <string name="send">Send</string>
 </resources>
